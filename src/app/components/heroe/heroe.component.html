@@ -1,0 +1,17 @@
+<div class="container mt-5 fadeIn animated">
+  <div class="container animated fadeIn">
+    <div class="fluid" style="text-align: center">
+      <div *ngIf="!heroe" class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+    <div class="card" *ngIf="heroe">
+      <img src="{{ heroe.img }}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{ heroe.nombre }}</h5>
+        <p class="card-text">{{ heroe.bio }}</p>
+        <p>{{ heroe.aparicion | date: 'fullDate' | titlecase }}</p>
+      </div>
+    </div>
+  </div>
+</div>
