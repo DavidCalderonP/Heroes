@@ -11,7 +11,11 @@ import {HeroeService} from "./components/shared/heroe.service";
 import { registerLocaleData } from "@angular/common";
 import localeEs from "@angular/common/locales/es-MX";
 import { HeroeComponent } from './components/heroe/heroe.component';
-import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.component'
+import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.component';
+import { TrimDataPipe } from './components/shared/pipes/trim-data.pipe';
+import { HeroeBusquedaComponent } from './components/heroe-busqueda/heroe-busqueda.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 registerLocaleData(localeEs);
 
@@ -23,11 +27,15 @@ registerLocaleData(localeEs);
     AboutComponent,
     HeroesComponent,
     HeroeComponent,
-    HeroeTarjetaComponent
+    HeroeTarjetaComponent,
+    TrimDataPipe,
+    HeroeBusquedaComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DragDropModule,
+    BrowserAnimationsModule
   ],
   providers: [
     HeroeService,

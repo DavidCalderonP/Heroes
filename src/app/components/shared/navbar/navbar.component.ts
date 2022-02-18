@@ -8,15 +8,12 @@ import { Router } from "@angular/router";
 })
 export class NavbarComponent implements OnInit {
 
-  @Output() filter: EventEmitter<string> = new EventEmitter<string>();
-
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
   buscarHeroe(word: string){
-    console.log(word)
-    this.filter.emit(word)
+    this.router.navigate(['/search', word]);
   }
 }

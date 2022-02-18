@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import {Heroe} from "../models/heroe";
 import {HeroeService} from "../shared/heroe.service";
 
@@ -10,7 +10,7 @@ import {HeroeService} from "../shared/heroe.service";
 export class HeroesComponent implements OnInit {
 
   public heroes: Heroe[] = [];
-  public filter: string = "";
+  public filtro: string = "";
 
   constructor(private data: HeroeService) { }
 
@@ -27,10 +27,8 @@ export class HeroesComponent implements OnInit {
     this.heroes = this.heroes.slice(0, this.heroes.length-1)
   }
 
-  filtrar(event: string){
-    this.heroes = this.heroes.filter(x=>x.nombre.toLowerCase().includes(event))
-    console.log("evento transmitido")
-    this.filter = event;
-    console.log(this.filter)
+  filtrar(event: string):string{
+    console.log("impirmiendo desde heroe ts", event);
+    return event;
   }
 }

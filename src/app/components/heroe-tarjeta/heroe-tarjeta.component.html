@@ -3,7 +3,7 @@
     <img src="{{ heroe.img }}" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">{{ heroe.nombre }}</h5>
-      <p class="card-text overflow">{{ heroe.bio }}</p>
+      <p class="card-text overflow">{{ heroe.bio | trimData: 150 }}</p>
     </div>
     <div class="card-footer">
       <small class="text-muted">{{ heroe.aparicion  | date: 'fullDate' | titlecase }}</small>

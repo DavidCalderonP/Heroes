@@ -68,11 +68,11 @@ export class HeroeService {
 
   constructor() { }
 
-  getHeroes(){
-     return this.delay();
+  getHeroes(filter?: string){
+     return this.delay(filter);
   }
 
-  async delay():Promise<Heroe[]>{
+  async delay(filter?: string):Promise<Heroe[]>{
     console.log("incio")
     const val = new Promise(resolve=>{
       setTimeout(()=>{
@@ -81,7 +81,7 @@ export class HeroeService {
     })
     await val //Comentar esta linea para quitar tiempo de espera;
     console.log("fin");
-    return this.heroes;
+    return filter ? this.heroes.filter(x=>x.nombre.toLowerCase().includes(filter.toLowerCase())) : this.heroes;
   }
 
   async delayUnique(id:string):Promise<Heroe>{
